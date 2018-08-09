@@ -13,12 +13,13 @@ class CraftAPI:
         """
         The constructor for class CraftAPI
 
-        The constructor creates ZeroMQ context and connects the socket to port 1234, the default
-        port of pycraft.
+        The constructor creates ZeroMQ context and connects the socket to
+        port 1234, the default port of pycraft.
         """
         self.context = zmq.Context()
         self.socket = self.context.socket(zmq.REQ)
         self.socket.connect('tcp://localhost:1234')
+
 
     def add_brick_block(self, position):
         """
