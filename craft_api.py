@@ -17,7 +17,7 @@ class CraftAPI:
         port 1234, the default port of pycraft.
         """
         self.context = zmq.Context()
-        self.socket = self.context.socket(zmq.REQ)
+        self.socket = self.context.socket(zmq.PUSH)
         self.socket.connect('tcp://localhost:1234')
 
 
