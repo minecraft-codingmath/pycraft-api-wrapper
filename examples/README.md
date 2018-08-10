@@ -6,4 +6,4 @@ Examples of pycraft API.
 
 ### Random Blocks (Source: `random_blocks.py`)
 
-[RandomBlocks.png](https://i.imgur.com/uOSG6aw.png)
+![RandomBlocks.png](https://i.imgur.com/uOSG6aw.png)
