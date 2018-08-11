@@ -5,6 +5,7 @@ craft_api.py -- The pycraft API
 
 
 import zmq
+from deprecated import deprecated
 
 
 class CraftAPI:
@@ -21,6 +22,7 @@ class CraftAPI:
         self.socket.connect('tcp://localhost:1234')
 
 
+    @deprecated
     def add_brick_block(self, position):
         """
         add_brick_block -- add a brick block to a given position
