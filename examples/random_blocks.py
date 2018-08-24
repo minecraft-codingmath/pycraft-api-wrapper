@@ -21,4 +21,5 @@ for _ in range(1000):
     x = random.randint(-50, 50)
     y = random.randint(0, 50)
     z = random.randint(-50, 50)
-    api.add_brick_block((x, y, z))
+    texture = random.choice(['brick', 'sand', 'grass'])
+    api.add_block((x, y, z), texture)
