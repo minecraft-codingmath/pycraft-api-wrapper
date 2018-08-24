@@ -4,6 +4,7 @@ craft_api.py -- The pycraft API
 """
 
 
+import msgpack
 import zmq
 from deprecated import deprecated
 
@@ -31,3 +32,30 @@ class CraftAPI:
         position -- the position of the block
         """
         self.socket.send(' '.join(repr(n) for n in position).encode('utf-8'))
+
+
+    def add_block(self, position, texture):
+        """
+        add_block -- add a block with specified texture to a given position
+
+        Argument:
+        position -- the position of the block
+        texture -- the texture of the block
+        """
+        command = {'cmd': 'add_block',
+                   'args': {'position': position, 'texture': texture}}
+        message = msgpack.packb(command, use_bin_type=True)
+        self.socket.send(message)
+
+
+    def delete_block(self, position):
+        """
+        delete_block -- delete a block in a given position
+
+        Arguments:
+        position -- the position of the block
+        """
+        command = {'cmd': 'delete_block',
+                   'args': {'position': position}}
+        message = msgpack.packb(command, use_bin_type=True)
+        self.socket.send(message)
