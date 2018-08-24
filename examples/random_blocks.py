@@ -17,7 +17,7 @@ api = CraftAPI()
 random.seed()
 
 BLOCK_COUNT = 1000    # number of blocks to create
-for _ in range(1000):
+for _ in range(BLOCK_COUNT):
     x = random.randint(-50, 50)
     y = random.randint(0, 50)
     z = random.randint(-50, 50)
